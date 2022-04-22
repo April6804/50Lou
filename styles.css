@@ -1,29 +1,35 @@
 body{
-margin:0;
-padding:0;
 font-size:16px;
   /*base font size*/
 font-family: Helvetica, sans-serif;
 background-image: linear-gradient(white, #6d6e73, black);
-line-height: 1.1em;
+line-height: 1.4em;
 color: black;
+margin:0;
+padding:0;
 }
 header{
   width:100%;
   background-color:white;
 }
 header img{
-  height:100px;
+  height:125px;
   margin-left:auto;
   margin-right:auto;
   display:block;
 }
+
+/* NOTE Added some space around icons */
+header i{
+  margin: 0 0 10px 10px;
+}
 img{
   max-width:100%;
   /* i can use max-width:100% also */
-  background:url("logo.jpg");
+  /* NOTE I removed teh logo from the background of all images */
+  /* background:url("logo.jpg"); */
   /* remove height when I have an image */
-  display:flex;
+  /* display:flex; */
 }
 nav{
   text-align: center;
@@ -35,7 +41,7 @@ nav a{
   margin:5px;
   color:#397d7c;
   text-decoration:none;
-  font-size: 1em;
+  font-size: 1.2em;
 }
 nav a:hover{
   color:#62d6d9;
@@ -49,7 +55,7 @@ nav a:hover{
 }
 .hero{
   width: 100%;
-  background:url("giftlarge2.jpg");
+  background:url("giftlarge2duotone.jpg");
   height:400px;
   background-position: center;
   background-size: cover;
@@ -67,13 +73,33 @@ nav a:hover{
   display:flex;
 }
 .search input{
-  width: 325px;
+  width: auto;
   display:flex;
 }
-/*trying flex boxes out*/
+.footer{
+  text-align: center;
+  margin:10px;
+  padding:10px;
+  background-color:white;
+}
+.footer a{
+  padding:10px;
+  margin:5px;
+
+}
+.footer p{
+  justify-content:space-around;
+  align-items:center;
+  color:#397d7c;
+  text-decoration:none;
+  font-size: 1.2em;
+}
+/* STYLES SPECIFIC TO INDEX*/
 span > div {
 	padding: 20px 25px;
-	box-shadow: 5px 5px 9px rgba(0,0,0,.5);
+  /* NOTE lightened the shadow */
+	box-shadow: 5px 5px 9px rgba(0,0,0,.2);
+  justify-content: flex-center;
 }
 /*copied from codepen https://codepen.io/qkombur/pen/dPxjJy example*/
 /* sets flex box to column for mobile */
@@ -81,22 +107,26 @@ span > div {
     display: flex;
     color: white;
     flex-wrap:wrap;
-    align-items: center;
-    background: #333;
+    /* NOTE changed align to justify */
+    justify-content: center;
 }
 /* sets all flexboxes to be same length */
 .flex-container span {
-    flex: 1;
-	flex-wrap:wrap;
-	display:flex;
+    flex-grow: 1;
+  	flex-wrap:wrap;
+  	display:flex;
+
 }
 /* Order # can be changed to switch order of boxes z-index is used to layer boxes. */
-.product1 {
-    order: 1;
+.product {
     background: #77787e;
-    z-index: 200;
-}
-.product2 {
+    z-index: 150;
+    max-width:400px;
+    /* NOTE added margin so you can see the card edges */
+    margin:10px;
+  }
+
+/*.product2 {
     order: 2;
     background: #636469;
     z-index: 150;
@@ -104,19 +134,14 @@ span > div {
 .product3 {
     order: 3;
     background: #4f5054;
-    z-index: 100;
+    z-index: 150;
 }
 .product4 {
     order: 4;
     background: #3b3c3f;
-    z-index: 50;
+    z-index: 150;
 }
-/* the following media's are to make this look nicer on bigger screens. */
-
-@media screen and (min-width: 1000px) {
-.flex-container {
-	font-size: 1.4em;
-	}
+*/
 /*end copy*/
 /* my previous attempts
 .flex-container {
@@ -127,52 +152,158 @@ span > div {
   align-items: grid;
 }
 end attempt*/
-.footer{
-  text-align: center;
-  margin:10px;
-  padding:10px;
-  background-color:white;
-}
-.footer a{
-  padding:10px;
-  margin:5px;
- 
-}
-.footer p{
-  justify-content:space-around;
-  align-items:center;
-  color:#397d7c;
-  text-decoration:none;
-  font-size: 1.2em;
-}
 
+/*END STYLES FOR INDEX*/
 /*STYLES FOR CONTACT PAGE*/
+.wrapperhours{
+  width:100%;
+  flex-wrap: wrap;
+}
 .contact-form{
-  width:340px;
-  height:375px;
-  background:#6d6e73;
-  border-radius:1px;
-  box-shadow:0 0 30px -10px #000;
-  margin:calc(50vh - 150px) auto;
-  padding:20px 20px;
-  max-width:calc(100vw - 40px);
+  width:100%;
+  /* height:60%; */
+  /* background:#6d6e73; */
+  /* NOTE Added your drop shaddow back in */
+  /* box-shadow: 5px 5px 9px rgba(0,0,0,.2); */
+  /* border-radius:1px; */
+  padding-bottom:20px;
+  /* margin:10px; */
+  /* max-width:90%; */
   box-sizing:border-box;
   font-family:'Montserrat',sans-serif;
-  position:relative;
+  /* position:relative; */
 }
-.contact-form h2{
-  margin:10px 0;
+/* .contact-form h2{
+  margin:15px;
   padding-bottom:10px;
   width:180px;
   color:white;
   border-bottom:3px solid #78788c
+} */
+label{
+  /* display: block;
+  margin-top: 40px;
+  margin-bottom: 40px; */
 }
-button{
-  background-color:white;
-  border-radius:3px;
-  padding:10px;
 
+label p{
+  /* padding: 0 10px; */
+  /* display: inline; */
+  /* color:white; */
 }
+
+.newsletter input{
+  /* display: inline-block; */
+  width:15px;
+  height: 15px;
+}
+textarea{
+  min-height: 100px;
+  width: 90%;
+  padding: 1.7%;
+  margin: 1.5% 0;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input{
+  width:90%;
+  height:30px;
+}
+.hours{
+  width:100%;
+}
+  /*Submit button styles borrowed and adapted from
+  https://codepen.io/yuhomyan/pen/OJMejWJ*/
+button {
+  /* margin: 20px; */
+}
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #0d4a47;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+}
+  .btn-4 {
+    background-color: #4dccc6;
+  background-image: linear-gradient(315deg, #4dccc6 0%, #96e4df 50%);
+    line-height: 42px;
+    padding: 0;
+    border: none;
+  }
+  .btn-4:hover{
+    background-color: #89d8d3;
+  background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
+  }
+  .btn-4 span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .btn-4:before,
+  .btn-4:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+     box-shadow:  4px 4px 6px 0 rgba(255,255,255,.9),
+                -4px -4px 6px 0 rgba(116, 125, 136, .2),
+      inset -4px -4px 6px 0 rgba(255,255,255,.9),
+      inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+    transition: all 0.3s ease;
+  }
+  .btn-4:before {
+    height: 0%;
+    width: .1px;
+  }
+  .btn-4:after {
+    width: 0%;
+    height: .1px;
+  }
+  .btn-4:hover:before {
+    height: 100%;
+  }
+  .btn-4:hover:after {
+    width: 100%;
+  }
+  .btn-4 span:before,
+  .btn-4 span:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.9),
+                -4px -4px 6px 0 rgba(116, 125, 136, .2),
+      inset -4px -4px 6px 0 rgba(255,255,255,.9),
+      inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+    transition: all 0.3s ease;
+  }
+  .btn-4 span:before {
+    width: .1px;
+    height: 0%;
+  }
+  .btn-4 span:after {
+    width: 0%;
+    height: .1px;
+  }
+  .btn-4 span:hover:before {
+    height: 100%;
+  }
+  .btn-4 span:hover:after {
+    width: 100%;
+  }
+
 /*
 input{
   width:100%;
@@ -223,21 +354,157 @@ span{
   margin:0 5px 0 15px
 }*/
 /*additional styles borrowed from https://codepen.io/leenalavanya/pen/mPWdPZ*/
+/*trying out table for contact page*/
+
+.hours {
+  display: grid;
+  grid-template-columns: 200px 200px;
+  grid-gap: 20px;
+  color: #444;
+}
+
+.box {
+  font-size: 1.2em;
+  border-bottom:1px lightgrey solid;
+}
+.map{
+  width:100%;
+  height:450px;
+  border: 0;
+
+}
 /*END STYLES FOR CONTACT PAGE*/
+/*STYLES FOR THANK YOU PAGE*/
+.hero2{
+  width: 100%;
+  background:url("thankyou.jpg");
+  height:400px;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+/*END STYLES FOR THANK YOU PAGE*/
+/* STYLES FOR ABOUT PAGE */
+.aboutimg{
+  display:flex;
+  background-image:linear-gradient(white lightgrey black);
+}
+.about{
+  display:flex;
+  background-color:"";
+
+
+}
+.about h3{
+  display:block;
+  flex-wrap:wrap;
+  justify-content:center;
+  color:#62d6d9;
+}
+.about p{
+  display:block;
+  flex-wrap:wrap;
+  color: black;
+  font-size: 1em;
+  font-style:normal;
+  font-family:sans-serif;
+}
+.grid-container {
+    color: white;
+    /*display: grid;*/
+    grid-template-columns: auto auto;
+    background-color: rgba( 98, 216, 217, 0.05);
+    padding: 10px;
+  }
+
+  .grid-item {
+    background-color:rgba( 98, 214, 217, 0.3);
+    padding: 10px;
+    font-size: 1em;
+    text-align: left;
+  }
+  .grid-item img{
+    width:100%;
+  }
+
+/*END STYLES FOR ABOUT PAGE*/
 /*desktop styles below*/
+/* the following media's are to make this look nicer on bigger screens. */
+@media screen and (min-width: 700px) {
+.flex-container {
+	font-size: 1.4em;
+	}
+  .grid-container {
+      color: white;
+      display: grid;
+      grid-template-columns: auto auto;
+      padding: 10px;
+    }
+
+    .grid-item {
+      padding: 10px;
+      font-size:1em;
+      text-align: left;
+    }
+    .grid-item img{
+      width:400px;
+    }
+}
 @media only screen and (min-width: 700px) {
   .wrapper{
     width:85%;
     margin:auto;
     }
+  nav li{
+    display: inline-block;
+  }
+  .search{
+    display:flex;
+    min-width:100%;
+  }
   .hero{
     height:400px;
   }
-nav li{
-  display: inline-block;
+  /* .contact-form{
+  width: 80%;
+  margin: auto;
+  }
+  .contact-form input, .contact-form textarea{
+  display: block;
+  width: auto;
+  border: 1px white solid;
+  border-radius: 3px;
 }
-.search{
-  display:flex;
-  min-width:100%;
-}
+  .contact-form input[type="submit"]{
+  color: white;
+  background-color:;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  height: 33px;
+  border: none;
+  margin-right: auto;
+} */
+  .wrapper2{
+    width:50%;
+  }
+  .map{
+    width: auto;
+    margin: auto;
+    margin-bottom: 15px;
+    padding: 10px;
+    padding-bottom: 5px;
+  }
+  .flex-container2{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+  section{
+    width: 49%;
+    display: inline-block;
+
+  }
 }
